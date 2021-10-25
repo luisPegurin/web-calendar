@@ -1,0 +1,27 @@
+
+<app-top-bar  ></app-top-bar>
+  
+<div style="height:auto;" class="grid-week">
+    <div class="weeknames">Dom</div>
+    <div class="weeknames">Seg</div>
+    <div class="weeknames">Ter</div>
+    <div class="weeknames">Qua</div>
+    <div class="weeknames">Qui</div>
+    <div class="weeknames">Sex</div>
+    <div class="weeknames">Sáb</div>
+</div>
+<div class="grid">
+    <div *ngFor="let day of days" 
+        [class.month-day]="day.month == calendarService.month" 
+        [class.padding-day]="day.month != calendarService.month"
+        (click)="openEventsDialog( day )" class="grid-cells">
+        
+        <span class="day">{{day.dayNum}}</span>
+        <div *ngIf="day.events.length">
+                <!-- <div class="bullet"></div> -->
+                <p *ngFor="let event of day.events"> {{event.title}} </p>
+        </div>  
+    </div>
+</div>
+
+

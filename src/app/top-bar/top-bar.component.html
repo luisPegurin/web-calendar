@@ -1,0 +1,10 @@
+<div>Web calendar</div>
+<div class="center"> 
+	<button mat-button (click)="prev()"><mat-icon>arrow_back_ios_new</mat-icon></button>
+	<div>{{month}} {{year}}</div>
+	<button mat-button (click)="next()"><mat-icon>arrow_forward_ios</mat-icon></button>
+</div>
+<div>
+	<a (click)="logout()" routerLink="/login">Sair</a>
+</div>
+

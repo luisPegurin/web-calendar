@@ -1,0 +1,47 @@
+  <mat-dialog-content style="max-height: 100%"> 
+  	<form [formGroup]="eventForm" (ngSubmit)="saveEvent()">
+
+  		<mat-card style="margin-bottom:4px">
+  			<mat-card-title>Adicionar Evento</mat-card-title>
+  			<div>
+  				<mat-form-field appearance="fill">
+  					<mat-label for="event-title">Descrição: </mat-label>
+  					<input matInput  placeholder="title" formControlName="title">
+  				</mat-form-field>
+  			</div>
+
+  			<div class="data-input-container">
+  				<div class="date-input-wrapper">
+  					<label for="startTime">Horário de início: {{startTimeInput.value}}</label>
+  					<input #startTimeInput [ngxTimepicker]="startTime" id="startTime" formControlName="startTime">
+  					<ngx-material-timepicker-toggle [for]="startTime"></ngx-material-timepicker-toggle>
+  					<ngx-material-timepicker #startTime [format]="24"></ngx-material-timepicker>
+  				</div>		
+  				<div class="date-input-wrapper">
+  					<label for="endTime">Horário de término: {{endTimeInput.value}}</label>
+  					<input #endTimeInput [ngxTimepicker]="endTime" formControlName="endTime" id="endTime">
+  					<ngx-material-timepicker-toggle style="display: inline" [for]="endTime"></ngx-material-timepicker-toggle>
+  					<ngx-material-timepicker #endTime [format]="24"></ngx-material-timepicker>
+  					
+  				</div>
+  			</div>
+  			<button mat-raised-button color="primary">Salvar</button>
+  		</mat-card>
+  	</form>
+
+  	<div *ngIf="data.events.length">
+  		<mat-card style="margin:40px 0 4px;">
+  			<mat-card-title>Eventos</mat-card-title>
+  			<ul>
+  				<li *ngFor="let event of data.events">
+  					<!-- adfadf -->
+  					<!-- {{event.title}} -->
+  					<!-- <button (click)="deleteEvent(event)">x</button> -->
+  					<app-event-detail [event]="event"></app-event-detail>
+  					<mat-divider [inset]="true"></mat-divider>
+  				</li>
+  			</ul>
+  		</mat-card>
+  	</div>
+
+  </mat-dialog-content>

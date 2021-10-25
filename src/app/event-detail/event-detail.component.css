@@ -1,0 +1,48 @@
+.event-container {
+	display: flex;
+	justify-content: space-between;
+	color: #3c4043;
+}
+
+.event-info {
+	display: flex;
+}
+
+.bullet {
+	background-color: #589dd4;
+	width: 14px;
+	height: 14px;
+	border-radius: 4px;
+	margin: 14px 14px 0 14px;
+}
+
+.container-actions {
+	margin-top:5px;
+}
+
+h3 {
+	font-size: 22px;
+	margin-bottom: 0;
+}
+
+p {
+	font-size:14px;
+}
+
+
+.date-input-wrapper {
+	display: flex;
+	text-decoration: underline;
+	align-items: center;
+}
+
+.date-input-wrapper input {
+	height: 1em;
+	/*border:0;*/
+	width: 4em;
+	display: none;
+}
+
+.data-input-container {
+	display: flex;
+}

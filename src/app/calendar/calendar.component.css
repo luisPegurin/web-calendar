@@ -1,0 +1,79 @@
+:host {
+    height: 100%;
+    border-top:0;
+    display: flex;
+    flex-direction: column;
+    color: #838383; 
+    box-sizing: border-box;
+} 
+
+.grid-week {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    }
+
+
+.grid-week .weeknames {
+    text-align: center;
+    padding: 10px 0 5px 0;
+    border:0; 
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: 1fr;
+    height: 100%;
+    grid-gap: 5px;
+    min-height: 0;  
+    min-width: 0; 
+}
+
+.grid-cells {
+    border: 1px solid #ccc;
+    border-width: 0px 1px 1px 0px ;
+    overflow: auto;
+    min-width: 0; 
+    /*min-height: 0;*/
+}
+
+.grid-cells span.day {
+    position: relative;
+    top:0px;
+    left:5px;
+}
+
+.month-day .day {
+    font-weight:500;
+}
+
+.month-day {
+    color:#3c4043;
+    
+}
+
+.padding-day {
+    color: #70757a;
+}
+
+p {
+    margin: 0;
+    white-space: nowrap;
+}
+
+p::before {
+    content: "\2022";
+}
+
+.bullet {
+    width: 5px;
+    height: 5px;
+    border-radius: 5px;
+    background:#589dd4;
+    align-self: center;
+    margin-right: 5px;
+}
+
+.event-container{
+    display: flex;
+}

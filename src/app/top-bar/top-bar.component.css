@@ -1,0 +1,23 @@
+:host {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background-color: #589dd4	;
+	color: #ffffff;
+	font-weight: bold;
+	padding: 0 10px;
+ }
+
+.center {
+	display: flex;
+	width: 300px;
+	justify-content: space-between;
+}
+
+.center div {
+	padding: 20px 0 20px 0;
+}
+
+a {
+	color: #ffffff;
+}

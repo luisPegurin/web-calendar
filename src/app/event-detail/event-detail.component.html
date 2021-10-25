@@ -1,0 +1,47 @@
+<div class="event-container" *ngIf="!updateForm" style="margin-top:20px">
+	<div class="event-info">
+		<div class="bullet"></div>
+		<div>
+			<h3>{{event.title}}</h3>
+			<p>{{event.day}} de {{calendarService.getMonth()}} de {{event.year}} ⋅ {{event.startTime}} até {{event.endTime}}</p>
+		</div>
+	</div>
+	<div class="container-actions">
+		<button mat-button color="primary" (click)="openEditor()">Editar</button>
+		<button mat-button  color="primary" (click)="deleteEvent()">Deletar</button>
+	</div>
+</div>
+
+ <div *ngIf="updateForm">
+<form  [formGroup]="eventForm"  (ngSubmit)="updateEvent()">
+
+	<mat-card>
+		<mat-card-title>Editar Evento</mat-card-title>
+		<div>
+			<mat-form-field appearance="fill">
+				<mat-label for="event-title">Descrição: </mat-label>
+				<input matInput  placeholder="title" formControlName="title">
+			</mat-form-field>
+		</div>
+
+		<div class="data-input-container">
+			<div class="date-input-wrapper">
+				<label for="startTime">Horário de início: {{eventForm.value.startTime}}</label>
+				<input #startTimeInput [ngxTimepicker]="startTime" id="startTime" formControlName="startTime">
+				<ngx-material-timepicker-toggle [for]="startTime"></ngx-material-timepicker-toggle>
+				<ngx-material-timepicker #startTime [format]="24"></ngx-material-timepicker>
+			</div>		
+			<div class="date-input-wrapper">
+				<label for="endTime">Horário de término: {{eventForm.value.endTime}}</label>
+				<input #endTimeInput [ngxTimepicker]="endTime" formControlName="endTime" id="endTime">
+				<ngx-material-timepicker-toggle style="display: inline" [for]="endTime"></ngx-material-timepicker-toggle>
+				<ngx-material-timepicker #endTime [format]="24"></ngx-material-timepicker>
+				
+			</div>
+		</div>
+		<button mat-flat-button color="basic" (click)="closeEditor()">Cancelar</button>
+		<button mat-flat-button color="primary">Salvar</button>
+	</mat-card>
+</form>
+
+</div>

@@ -1,0 +1,21 @@
+ul, li {
+	list-style: none;
+	margin:none;
+	padding:0;
+}
+.date-input-wrapper {
+	display: flex;
+	text-decoration: underline;
+	align-items: center;
+}
+
+.date-input-wrapper input {
+	height: 1em;
+	border:0;
+	width: auto;
+	display: none;
+}
+
+.data-input-container {
+	display: flex;
+}
